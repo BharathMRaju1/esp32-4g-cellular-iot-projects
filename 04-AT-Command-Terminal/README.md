@@ -79,4 +79,97 @@ ESP32                    EC200U-CN
 -----------------------------------
 GPIO17 TX  ------------> RX
 GPIO16 RX  <------------ TX
-GND        ------------> GND
+GND        ------------> GND 
+```
+
+---
+
+EXAMPLE OUTPUT
+
+=============================================
+EC200U AT COMMAND TERMINAL
+=============================================
+
+=============================================
+INITIALIZING EC200U MODEM
+=============================================
+>> AT
+Modem communication: OK
+>> ATE0
+Command echo: OFF
+Modem initialization complete.
+
+Available commands:
+  modem   - Modem information
+  signal  - Signal information
+  sim     - SIM status
+  network - Network registration
+  nwinfo  - LTE network information
+  EXIT    - Exit terminal
+
+You can also enter any AT command.
+==================================================
+
+---
+
+Modem information
+
+AT> modem
+>> ATI
+Quectel
+EC200U
+Revision: EC200UCNAAR02A10M08
+
+OK
+STATUS: OK
+
+---
+
+Signal
+
+AT> signal
+>> AT+CSQ
+Signal Information
+
+RSSI: 14
+BER : 99
+STATUS: OK
+
+---
+
+SIM
+
+AT> sim
+>> AT+CPIN?
+SIM Status
+
+Status : READY
+Result : SIM is ready
+STATUS : OK
+
+---
+
+Network
+
+AT> network
+>> AT+CREG?
+Network Registration
+
+Mode   : 0
+Status : 1
+Result : Registered on home network
+STATUS : OK
+
+---
+
+LTE network
+
+AT> nwinfo
+>> AT+QNWINFO
+Network Information
+
+Technology : FDD LTE
+Operator   : 40445
+Band       : LTE BAND 3
+Channel    : 1301
+STATUS     : OK
